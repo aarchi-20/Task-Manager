@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Mate – Organize your day, your way</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav-public">
+    <div class="sidebar-logo" style="margin:0;">Task<span>Mate</span></div>
+    <div class="nav-public-actions">
+      <button class="icon-btn" id="themeToggle" title="Toggle theme">🌙</button>
+      <a href="/login" class="btn-ghost">Log in</a>
+      <a href="/signup" class="btn-primary">Get started</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">✨ Built for people who live by their to‑do list</div>
+      <h1>TaskMate – Where Productivity Meets Simplicity.</h1>
+      <p class="lead">Plan smarter, prioritize better, and accomplish your goals with a task manager designed to make every day more productive.</p>
+      <div class="hero-actions">
+        <a href="/signup" class="btn-primary" style="padding:13px 28px;font-size:.95rem;">Create your free account</a>
+        <a href="/login" class="btn-outline" style="padding:13px 28px;font-size:.95rem;">I already have an account</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mock-card">
+        <div class="mock-card-header">
+          <h4>Today</h4>
+          <span class="mock-pill">3 of 5 done</span>
+        </div>
+        <div class="mock-task">
+          <div class="mock-check done"></div>
+          <div class="mock-task-body">
+            <div class="mock-task-title strike">Submit client proposal</div>
+            <div class="mock-task-meta"><span class="mock-chip chip-cat">Work</span></div>
+          </div>
+        </div>
+        <div class="mock-task">
+          <div class="mock-check"></div>
+          <div class="mock-task-body">
+            <div class="mock-task-title">Book dentist appointment</div>
+            <div class="mock-task-meta"><span class="mock-chip chip-med">Medium</span><span class="mock-chip chip-cat">Health</span></div>
+          </div>
+        </div>
+        <div class="mock-task">
+          <div class="mock-check"></div>
+          <div class="mock-task-body">
+            <div class="mock-task-title">Pay electricity bill</div>
+            <div class="mock-task-meta"><span class="mock-chip chip-high">High</span><span class="mock-chip chip-cat">Bills</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="section">
+    <div class="section-head">
+      <div class="section-eyebrow">Features</div>
+      <h2>Everything a task list needs. Nothing it doesn't.</h2>
+      <p>No clutter, no setup, no subscription — just the tools that actually help you get things done.</p>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📝</div>
+        <h3>Add, edit & delete tasks</h3>
+        <p>Capture a task in seconds, and update or remove it whenever your plans change.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔥</div>
+        <h3>Priority levels</h3>
+        <p>Mark tasks High, Medium, or Low so you always know what to tackle first.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔔</div>
+        <h3>Smart reminders</h3>
+        <p>Set a date and time, and Task Mate will notify you.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏷️</div>
+        <h3>Categories</h3>
+        <p>Sort tasks into Work, Personal, Health, Bills, or any category you create.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔍</div>
+        <h3>Filter & search</h3>
+        <p>Instantly narrow your list by priority, category, status, or keyword.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🌗</div>
+        <h3>Dark & light mode</h3>
+        <p>An easy-on-the-eyes dark theme, or a clean light theme — your call, any time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" style="background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
+    <div class="section-head">
+      <div class="section-eyebrow">How it works</div>
+      <h2>Three steps to a clearer day</h2>
+    </div>
+    <div class="steps-row">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h4>Create your account</h4>
+        <p>Sign up with your name, email, and a password — takes under a minute.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h4>Add your tasks</h4>
+        <p>Give each task a priority, category, and optional reminder.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h4>Stay on top of it</h4>
+        <p>Filter, check off, and get nudged exactly when you need it.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <h2>Ready to stop forgetting things?</h2>
+    <p>It's free, it's fast, and your data never leaves your browser.</p>
+    <a href="/signup" class="btn-primary" style="padding:13px 30px;font-size:.95rem;">Get started — it's free</a>
+  </section>
+
+  <footer class="site-footer">
+    © 2026 Task Mate. A simple, private task manager.
+  </footer>
+
+  <script src="static/js/app.js"></script>
+</body>
+</html>

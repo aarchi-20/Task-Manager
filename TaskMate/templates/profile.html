@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile & Settings – Task Mate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar-logo">Task<span>Mate</span></div>
+      <div class="nav-section">
+        <div class="nav-label">Main</div>
+        <a class="nav-item" href="/dashboard"><span class="nav-icon">🏠</span> Dashboard</a>
+        <a class="nav-item" href="/dashboard"><span class="nav-icon">📋</span> All Tasks</a>
+      </div>
+      <div class="nav-section">
+        <div class="nav-label">Account</div>
+        <a class="nav-item active" href="/profile"><span class="nav-icon">👤</span> Profile</a>
+        <button class="nav-item"><span class="nav-icon">🚪</span> Log out</button>
+      </div>
+      <div class="sidebar-bottom">
+        <div class="user-card">
+          <div class="user-avatar">?</div>
+          <div class="user-info">
+            <div class="user-name">Loading...</div>
+            <div class="user-email">...</div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="main">
+      <div class="topbar">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <button class="mobile-menu-btn">☰</button>
+          <div class="topbar-title">Profile & Settings</div>
+        </div>
+        <div class="topbar-right">
+          <button class="icon-btn" id="themeToggle">🌙</button>
+          <a href="/dashboard" class="icon-btn" title="Dashboard">🏠</a>
+        </div>
+      </div>
+
+      <div class="content">
+
+        <!-- PROFILE HERO -->
+        <div class="profile-hero">
+          <div class="profile-avatar-lg">?</div>
+          <div class="profile-info">
+            <h2>Loading...</h2>
+            <p>...</p>
+            <div class="stats-pills">
+              <div class="stat-pill">📋 <span>0</span> tasks</div>
+              <div class="stat-pill">✅ <span>0</span> done</div>
+              <div class="stat-pill">🔥 <span>0</span> high priority</div>
+            </div>
+            <div class="member-since"></div>
+          </div>
+        </div>
+
+        <!-- PERSONAL INFO -->
+        <div class="settings-section">
+          <div class="settings-section-header">
+            <span>👤</span><h3>Personal Information</h3>
+          </div>
+          <div class="settings-form-body">
+            <form novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="editFirst">First Name</label>
+                  <input class="form-input" id="editFirst" type="text" placeholder="First name">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="editLast">Last Name</label>
+                  <input class="form-input" id="editLast" type="text" placeholder="Last name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="editEmail">Email Address</label>
+                <input class="form-input" id="editEmail" type="email" placeholder="Email">
+              </div>
+              <button type="submit" class="btn-save">Save Changes</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- CHANGE PASSWORD -->
+        <div class="settings-section">
+          <div class="settings-section-header">
+            <span>🔑</span><h3>Change Password</h3>
+          </div>
+          <div class="settings-form-body">
+            <form novalidate>
+              <div class="form-group">
+                <label class="form-label" for="curPw">Current Password</label>
+                <input class="form-input" id="curPw" type="password" placeholder="Enter current password">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label" for="newPw">New Password</label>
+                  <input class="form-input" id="newPw" type="password" placeholder="New password">
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="confirmPw">Confirm New</label>
+                  <input class="form-input" id="confirmPw" type="password" placeholder="Confirm new password">
+                </div>
+              </div>
+              <button type="submit" class="btn-save">Update Password</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- APPEARANCE -->
+        <div class="settings-section">
+          <div class="settings-section-header">
+            <span>🎨</span><h3>Appearance</h3>
+          </div>
+          <div class="settings-item">
+            <div class="settings-item-left">
+              <h4>Dark Mode</h4>
+              <p>Switch between dark and light interface</p>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" id="darkModeToggle">
+              <div class="toggle-track"></div>
+              <div class="toggle-thumb"></div>
+            </label>
+          </div>
+          <div class="settings-item">
+            <div class="settings-item-left">
+              <h4>Browser Notifications</h4>
+              <p>Enable reminder notifications in your browser</p>
+            </div>
+            <label class="toggle">
+              <input type="checkbox">
+              <div class="toggle-track"></div>
+              <div class="toggle-thumb"></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- DANGER ZONE -->
+        <div class="danger-zone">
+          <h3>⚠️ Danger Zone</h3>
+          <p>These actions are permanent and cannot be undone. Please proceed with caution.</p>
+          <div class="danger-btns">
+            <button class="btn-danger">🗑️ Clear All Tasks</button>
+            <button class="btn-danger">❌ Delete Account</button>
+          </div>
+        </div>
+
+        <!-- LOGOUT -->
+        <button class="btn-ghost">🚪 Sign Out</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CLEAR TASKS CONFIRM MODAL -->
+  <div class="modal-overlay">
+    <div class="modal">
+      <div class="modal-title">⚠️ Clear All Tasks</div>
+      <p>This will permanently delete <strong>all</strong> of your tasks. This action cannot be undone.</p>
+      <div class="modal-actions">
+        <button class="modal-close-btn">Cancel</button>
+        <button class="btn-danger">Clear All Tasks</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- DELETE ACCOUNT MODAL -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal">
+      <div class="modal-title">⚠️ Delete Account</div>
+      <p>This will permanently delete your account and <strong>all your tasks</strong>. This action cannot be undone.</p>
+      <p>Type <strong>DELETE</strong> to confirm:</p>
+      <input class="form-input" style="margin-bottom:6px;">
+      <div class="modal-actions">
+        <button class="modal-close-btn" id="cancelDeleteBtn">Cancel</button>
+        <button class="btn-danger" id="confirmDeleteBtn">Delete Forever</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast-wrap" id="toastWrap"></div>
+
+  <script src="static/js/app.js"></script>
+</body>
+</html>
