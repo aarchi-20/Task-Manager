@@ -16,7 +16,7 @@
       <div class="auth-logo">Task<span>Mate</span></div>
       <p class="auth-subtitle">Welcome back. Log in to see your tasks.</p>
 
-      <form novalidate>
+      <form method="post" novalidate>
         {% csrf_token %}
         <div class="form-group">
           <label class="form-label" for="loginEmail">Email Address</label>
