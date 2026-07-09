@@ -38,13 +38,13 @@ def login(request):
 
             user_obj = User.objects.filter(Email=email).first()
 
-            if user_obj and check_password(password, user_obj.Password):
+            if user_obj and password == user_obj.Password:
                 request.session['is_login'] = True
                 request.session['userid'] = user_obj.id
                 return redirect('/dashboard')
             else:
-                messages.error(request, "Invalid email or password.")
-
+                messages.error(request,"Invalid email or password.")
+            
     return render(request,'login.html')
 
 def logout(request):
@@ -55,4 +55,55 @@ def dashboard(request):
     return render(request,'dashboard.html')
 
 def profile(request):
-    return render(request,'profile.html')
+    if not request.session.get('is_login'):
+        return redirect('/login')
+    
+    userid = request.session.get('userid')
+    user = User.objects.filter(id=userid).first()
+    return render(request,'profile.html',{'user':user})
+
+def update_profile(request):
+    if not request.session.get('is_login'):
+        return redirect('/login')
+    
+    userid = request.session.get('userid')
+    user = User.objects.filter(id=userid).first()
+
+    if request.method == 'POST' and user:
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+
+        user.Name = name
+        user.Email = email
+        user.save()
+        messages.success(request,'Profile updated')
+        return redirect('/profile')
+    
+    return redirect('/profile')
+
+def change_password(request):
+    if not request.session.get('is_login'):
+        return redirect('/login')
+    
+    userid = request.session.get('userid')
+    user = User.objects.filter(id=userid).first()
+    
+    if request.method == 'POST' and user:
+        curr_password = request.POST.get('current_password')
+        new_password = request.POST.get('new_password')
+        confirm_password = request.POST.get('confirm_password')
+
+        if curr_password != user.Password:
+            messages.error(request,'Current password is incorrect.')
+            return redirect('/profile')
+        
+        if new_password != confirm_password:
+            messages.error(request, 'New password and confirm password do not match.')
+            return redirect('/profile')
+        
+        user.Password = new_password
+        user.save()
+        messages.success(request,'Password changed successfully.')
+        return redirect('/profile')
+    
+    return redirect('/profile')

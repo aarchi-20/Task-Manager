@@ -21,17 +21,20 @@
         <div class="form-group">
           <label class="form-label" for="loginEmail">Email Address</label>
           <input class="form-input" id="loginEmail" type="email" name="email" autocomplete="email">
-          <div class="form-error">Enter the email you signed up with.</div>
         </div>
 
         <div class="form-group">
           <label class="form-label" for="loginPassword">Password</label>
-          <input class="form-input" id="loginPassword" type="password" name="name" autocomplete="current-password">
-          <div class="form-error">Incorrect email or password.</div>
+          <input class="form-input" id="loginPassword" type="password" name="password" autocomplete="current-password">
         </div>
 
         <button type="submit" class="btn-primary btn-block" style="padding:12px;">Log In</button>
       </form>
+      {% if messages %}
+         {% for message in messages %}
+            <p class="form-error" style="display:block;">{{ message }}</p>
+          {% endfor %}
+      {% endif %}
 
       <div class="auth-footer">Don't have an account? <a href="/signup">Sign up</a></div>
     </div>
